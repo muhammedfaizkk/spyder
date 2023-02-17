@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spyder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+
+</head>
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+              <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Customer Registration</h3>
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+      
+                        <div class="form-outline">
+                          <input type="text"  name="c_name" class="form-control form-control-lg" />
+                          <label class="form-label" for="firstName"> Name</label>
+                        </div>
+      
+                      </div>
+                      
+                    </div>
+      
+                    <div class="row">
+                      
+                      <div class="col-md-6 mb-4">
+      
+                        <h6 class="mb-2 pb-1">Gender: </h6>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="c_gender" id="femaleGender"
+                            value="Male" checked />
+                          <label class="form-check-label" for="femaleGender">Male</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="c_gender" id="maleGender"
+                            value="Female" />
+                          <label class="form-check-label" for="maleGender">Female</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="c_gender" id="otherGender"
+                            value="Other" />
+                          <label class="form-check-label" for="otherGender">Other</label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+      
+                        <div class="form-outline">
+                          <input type="email" id="email" name="c_email" class="form-control form-control-lg" />
+                          <label class="form-label" id="emaillabel">Email</label>
+                          <label class="form-label text-danger" id="checkmail"></label>
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                          <input type="text" id="" name="phone" class="form-control form-control-lg" />
+                          <label class="form-label" for="">Phone Number</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <input type="text" id="house" name="c_address" class="form-control form-control-lg" />
+                        <label class="form-label" for="house">Address</label>
+                      </div>
+                  
+                      
+                    </div>
+                  
+      
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="text" id="pwd" name="pass" class="form-control form-control-lg" />
+                        <label class="form-label" for="phoneNumber">Password</label>
+      
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="file" name="img"  class="form-control form-control-lg bg-sec rounded-4 border-0" />
+                        <label class="form-label" for="">Photo</label>
+      
+                      </div>
+                    </div>  
+                    <!-- <div class="row">
+                      <div class="col-12">
+                        <input type="password" id="cpwd" name="cpwd" class="form-control form-control-lg" />
+                        <label class="form-label" for="phoneNumber">Confirm Password</label>
+                        <label class="form-label text-danger" id="passwordverify"></label>
+      
+      
+                      </div> -->
+                    </div>
+      
+                    <div class="mt-4 pt-2">
+                      <input id="btn" class="btn bg-lightdark text-light btn-big" type="submit" value="Submit" />
+                      
+                      <a href="{% url 'common:common_login' %}" class="btn bg-lightdark text-light btn-big">Back</a>
+                    </div>
+      
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+  
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <!-- <script>
+    $(document).ready(function(){
+      $.ajaxSetup({
+        headers:{
+          "X-CSRFToken":'{{ csrf_token }}' 
+        }
+      })
+      $('#email').change(function(){
+        let emailtext = $(this).val()
+        
+        $.ajax({
+          url : "{% url 'common:common_customersignup' %}",
+          data : {
+            'demo' : emailtext,
+          },
+          method : 'POST',
+          success : function(response){
+            let val = response.message.length
+            $('#checkmail').text(response.message)
+                       
+            if (val >= 1){
+              $('#email').css({'border-color':'red'})
+              $('#btn').prop('disabled',true)
+            }
+            else{
+              $('#email').css({'border-color':''})
+              $('#btn').prop('disabled',false)
+            }
+          }
+
+        })
+      })
+      $('#cpwd').blur(function(){
+        let pwd = $('#pwd').val()
+        let cpwd = $('#cpwd').val()
+        if (pwd != cpwd){
+          $('#passwordverify').text(" * Password not same")
+              $('#btn').prop('disabled',true)
+        }
+        else{
+          
+              $('#btn').prop('disabled',false)
+        }
+      })
+      
+    })
+  </script> -->
+  
+</body>
+  </html>

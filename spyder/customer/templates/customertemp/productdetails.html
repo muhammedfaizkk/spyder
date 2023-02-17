@@ -1,0 +1,72 @@
+{% extends 'customertemp/masterpage.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="container-fluid">
+  <div class="row">
+      <div class="col-12 text-center text-white p-4" style="background-color: #6f7376;">
+          <span style="font-size:30px ; color: #c5cace; font-weight: lighter;">Product Details</span>
+      </div>
+  </div>
+</div>
+</section>
+<section>
+    <div class="container">
+    <div class="row p-3">
+    <div class="col-md-6 col-12">
+       
+            
+              
+                <img class="d-block w-100" src="" alt="First slide">
+             
+             
+          
+          <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-lg text-uppercase m-4" > 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-dash mr-2" viewBox="0 0 16 16">
+                <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z"/>
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+              </svg> Add to Cart</button>
+            
+              <a href="" class="btn btn-danger btn-lg text-uppercase m-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag mr-2" viewBox="0 0 16 16">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+              </svg>Buy Now</a>
+              
+            </form>
+            
+    </div>
+    
+    <div class="col-md-6 col-12">
+      <div class="alert alert-secondary text-danger" role="alert">
+        {{ message }}
+      </div>
+        <h3></h3>
+        <h6></h6>
+        <button class="btn btn-success pl-1 pt-0 m-3" style="width: 40px; height: 30px;"><small>4.5</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
+        <span style="color: #6f7376;">(10254)</span>
+        <p class="font-weight-bold"><span class="price pl-2">{{ prodetails.price }}</span><del class="pl-2 text-secondary pr-2 font-weight-light">₹6400</del>
+            <span class="text-success">16% off</span></p>
+            <p class="font-weight-bold">Seller Name: {{ prodetails.seller.seller_fname }}</p>
+            <p class="font-weight-bold">Available Offers</p>
+            
+            <ul class="list-unstyled">
+                <li><img src="{% static 'images/offerslogo.webp' %}" width="18px" height="18px"><span class="pl-2">Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</span></li>
+                <li><img src="{% static 'images/offerslogo.webp' %}" width="18px" height="18px"><span class="pl-2">Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card</span></li>
+                <li><img src="{% static 'images/offerslogo.webp' %}" width="18px" height="18px"><span class="pl-2">Partner OfferBuy this product and get upto ₹500 off on Flipkart</span></li>
+                <li><img src="{% static 'images/offerslogo.webp' %}" width="18px" height="18px"><span class="pl-2">EMI starting from ₹614/month View Plans</span></li>
+            </ul>
+          
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
+
+      
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  </html>

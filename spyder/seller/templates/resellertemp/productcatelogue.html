@@ -1,0 +1,38 @@
+{% extends 'resellertemp/masterpage.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Next Section -->
+<section >
+  <div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col-12 text-center text-white p-4" style="background-color: #6f7376;">
+        <span style="font-size:30px ; color: #c5cace; font-weight: lighter;">Welcome {{ fname | upper }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container" >
+    <div class="row">
+      {% for i in product %}
+      <div class="col-12 col-md-3 col-sm-6 pt-3"><a href="" class="text-dark">
+        <div class="card text-center">
+          <img src="{{ i.proimg.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title font1">{{ i.protitle }}</h5>
+            <p class="card-text  font2">{{i.prosubtitle}}</p>
+            <button class="btn btn-success pl-1 pt-0" style="width: 40px; height: 30px;"><small>4.2</small><img src="{% static 'images/star.svg' %}" width="15px" height="15px" class="pl-1"></button>
+            <span style="color: #6f7376;">(2254)</span>
+            <p class="text-success font-weight-bold  "><ins>{{i.price}}</ins><del class="pl-2 text-secondary pr-2 font-weight-light">₹6500</del>15% off</p>
+            <p class="text-success font-weight-bold  "><ins>{{i.seller.seller_fname}}</ins></p>
+          </div>
+        </div></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>  
+</section>
+</body>
+</html>
+{% endblock %}
